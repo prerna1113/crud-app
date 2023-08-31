@@ -34,7 +34,24 @@ app.post("/create",async(req,res)=>{
     const data  = new userModel(req.body)
     await data.save()
     
-    res.send({success:true, message:"data save successfully"})
+    res.send({success:true, message:"data save successfully",data:data})
+})
+
+app.put("/update",async(req,res)=>{
+    console.log(req.body)
+    const {id,...rest} = req.body
+    console.log(rest)
+    const data =await userModel.updateOne({_id :id},rest)
+    
+    res.send({success:true, message:"data update successfully",data:data})
+})
+
+app.delete("/delete/:id",async(req,res)=>{
+    const id = req.params.id
+
+    console.log(id)
+    const data = await userModel.deleteOne({_id:id})
+    res.send({success:true, message:"data deleted successfully",data:data})
 })
 
 
