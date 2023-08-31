@@ -49,3 +49,19 @@ border: none;
     margin-right: 33px;
    
 }
+.box {
+    margin: auto;
+
+}
+
+
+.addBtn {
+  margin-left: 40%;
+  margin-top: 5%;
+  width: 60px;
+  padding: 5px;
+  background-color: rgb(74, 74, 230);
+  color:white;
+  border: none;
+  font-size: 14px;
+}
